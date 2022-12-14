@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 const url = "http://localhost:9000/product/"
 
-export const CreateProduct =()=>{
+export const CreateProduct = () => {
     const [codigo, setCodigo] = useState("")
     const [nombre, setNombre] = useState("")
     const [marca, setMarca] = useState("")
@@ -12,7 +12,7 @@ export const CreateProduct =()=>{
     const navigate = useNavigate()
 
     //crear nuevo registro/producto
-    const crear = async (e)=>{
+    const crear = async (e) => {
         e.preventDefault()
         await axios.post(url, {
             code: codigo,
@@ -26,41 +26,41 @@ export const CreateProduct =()=>{
         <div>
             <h3>Nuevo Producto</h3>
             <form onSubmit={crear}>
-            <div className="mb-3">
-                <label className="form-label">Código</label>
-                <input 
-                value={codigo}
-                onChange={(e)=>setCodigo(e.target.value)}
-                type="text"
-                className="form-control"
-                />
+                <div className="mb-3">
+                    <label className="form-label">Código</label>
+                    <input
+                        value={codigo}
+                        onChange={(e) => setCodigo(e.target.value)}
+                        type="text"
+                        className="form-control"
+                    />
                 </div>
 
                 <div className="mb-3">
-                <label className="form-label">Nombre</label>
-                <input 
-                value={nombre}
-                onChange={(e)=>setNombre(e.target.value)}
-                type="text"
-                className="form-control"
-                />
+                    <label className="form-label">Nombre</label>
+                    <input
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
+                        type="text"
+                        className="form-control"
+                    />
                 </div>
 
                 <div className="mb-3">
-                <label className="form-label">Marca</label>
-                <input 
-                type="text" 
-                className="form-control" 
-                value={marca}
-                onChange={(e)=>setMarca(e.target.value)}
-                />
+                    <label className="form-label">Marca</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={marca}
+                        onChange={(e) => setMarca(e.target.value)}
+                    />
                 </div>
 
-            <button type="submit" className="btn btn-success">CREAR</button>
-            
-            
+                <button type="submit" className="btn btn-success">CREAR</button>
+
+
             </form>
-            </div>
-        
+        </div>
+
     )
 }
