@@ -1,92 +1,143 @@
-.App {
-  text-align: center;
-  background: #0F2027;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-min-height: 100vh;
-display: flex;
-  
-}
-
-.App td {
-color: aliceblue;
-}
-
-.btn {
-  margin: 5px;
-  appearance: none;
-  background-color: #2ea44f;
-  border: 1px solid rgba(27, 31, 35, .15);
-  border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  padding: 6px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
   -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  white-space: nowrap;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-.btn:focus:not(:focus-visible):not(.focus-visible) {
-  box-shadow: none;
-  outline: none;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
-.btn:hover {
-  background-color: #2c974b;
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
 
-.btn:focus {
-  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
-  outline: none;
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
 }
 
-.btn:disabled {
-  background-color: #94d3a2;
-  border-color: rgba(27, 31, 35, .1);
-  color: rgba(255, 255, 255, .8);
-  cursor: default;
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
 }
 
-.btn:active {
-  background-color: #298e46;
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
 }
 
-h3{
-  color: aliceblue;
-}
-
-label{
-color:beige;
-}
-
-
-
-
-
-/*.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-scroller .nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}*/
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
 
+body {
+  font-size: .875rem;
+}
 
+.feather {
+  width: 16px;
+  height: 16px;
+}
 
+/*
+ * Sidebar
+ */
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  height: calc(100vh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #2470dc;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
